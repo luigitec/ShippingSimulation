@@ -30,6 +30,41 @@ using the system and the SortedLinkedList library :)
 - Run `composer install` to install dependencies.
 - Execute `php index.php` to run the simulation.
 
+### If You Prefer Docker
+
+You can run this project using Docker.
+
+#### Build and Run
+
+1. Ensure you have Docker and Docker Compose installed.
+2. Build and start the container:
+
+   ```sh
+   docker-compose up --build -d
+    ```
+
+This will install dependencies and run index.php as a CLI script inside the container.
+
+3. To run index.php interactively inside the container:
+
+    ```sh
+    docker-compose run app php index.php
+    ```
+
+**Note:**
+index.php is a command-line script. There is no web server or browser interface.
+
+4. To stop the container, run:
+
+   ```sh
+   docker-compose down --remove-orphans
+   ```
+5. To remove the container and its volumes, run:
+
+    ```sh
+    docker-compose down -v
+    ```
+
 ### Disclaimer
 
 This is a simplified simulation for educational purposes. 
