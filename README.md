@@ -54,12 +54,18 @@ This will install dependencies and run index.php as a CLI script inside the cont
 **Note:**
 index.php is a command-line script. There is no web server or browser interface.
 
-4. To stop the container, run:
+4. To run the shipmonk-rnd/dead-code-detector (PHPStan) static analysis tool, you can use the following command:
+
+   ```sh
+   docker-compose run app vendor/bin/dead-code-detector analyse --level=5 src/
+   ```
+
+5. To stop the container, run:
 
    ```sh
    docker-compose down --remove-orphans
    ```
-5. To remove the container and its volumes, run:
+6. To remove the container and its volumes, run:
 
     ```sh
     docker-compose down -v
