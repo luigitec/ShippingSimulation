@@ -66,10 +66,8 @@ class FulfillmentQueue
             promisedDelivery: $promisedDelivery
         );
 
-        $orderId = count($this->orders);
-
-        $this->orders[$orderId] = $order;
-        $this->orderTracking[$orderNumber] = $orderId;
+        $this->orders[$orderNumber] = $order;
+        $this->orderTracking[$orderNumber] = $orderNumber;
 
         $this->priorityQueue->add($priority);
 

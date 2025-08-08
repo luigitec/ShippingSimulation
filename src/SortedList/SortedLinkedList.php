@@ -19,7 +19,7 @@ class SortedLinkedList implements IteratorAggregate, Countable, JsonSerializable
     private array $allowedTypes = ['int', 'string'];
 
     /**
-     * @desciption Only int ot strings.
+     * @description Only int or strings.
      *
      * @param string|null $type
      * @throws InvalidTypeException
@@ -255,32 +255,6 @@ class SortedLinkedList implements IteratorAggregate, Countable, JsonSerializable
             'size' => $this->size,
             'data' => $this->toArray()
         ];
-    }
-
-    /**
-     * Helper public method to find the index of a specific value in the sorted linked list.
-     * - It iterates through the list, comparing each node's value with the given value.
-     * - If it finds a match, it returns the index of that value.
-     * - If it reaches a point where the current node's value is greater than the given value,
-     * it breaks the loop and returns -1, indicating that the value was not found.
-     */
-    public function indexOf(string|int $value): int
-    {
-        $current = $this->head;
-        $index = 0;
-
-        while ($current !== null) {
-            if ($current->data === $value) {
-                return $index;
-            }
-            if ($current->data > $value) {
-                break;
-            }
-            $current = $current->next;
-            $index++;
-        }
-
-        return -1;
     }
 
     /**
